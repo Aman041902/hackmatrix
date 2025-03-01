@@ -9,13 +9,13 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
-      {/* <LandingPage></LandingPage> */}
+    <div className="min-h-screen w-full">
+      <LandingPage></LandingPage>
       {/* <StudentDashboard></StudentDashboard> */}
       {/* <CoursePlaylistPage></CoursePlaylistPage> */}
       {/* <LeaderboardBadgeShowcase></LeaderboardBadgeShowcase> */}
       {/* <TeacherDashboard></TeacherDashboard> */}
-      <ProfileProgressPage></ProfileProgressPage>
+      {/* <ProfileProgressPage></ProfileProgressPage> */}
     </div>
   );
 }
