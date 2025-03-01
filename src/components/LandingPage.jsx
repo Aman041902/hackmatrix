@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link,NavLink} from 'react-router-dom'
 import { Search, Trophy, Video, BookOpen, User, LogIn, UserPlus } from 'lucide-react';
 
 const LandingPage = () => {
@@ -29,11 +30,15 @@ const LandingPage = () => {
           <div className="flex space-x-4">
             <button className="px-4 py-2 rounded-md text-gray-600 hover:text-gray-900 flex items-center">
               <LogIn className="h-5 w-5 mr-1" />
-              <span>Login</span>
+              <NavLink to='/login'>
+                <span>Login</span>
+              </NavLink>
             </button>
             <button className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 flex items-center">
               <UserPlus className="h-5 w-5 mr-1" />
-              <span>Register</span>
+              <NavLink to='/signup'>
+                <span>Register</span>
+              </NavLink>
             </button>
           </div>
         </div>

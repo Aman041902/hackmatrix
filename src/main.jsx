@@ -1,16 +1,19 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { BrowserRouter } from 'react-router-dom'
-import { Route } from 'react-router-dom'
-import { Routes } from 'react-router-dom'
-import Login from './components/Login.jsx'
+
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider } from 'react-redux'
+import rootreducer from './Redux/reducer.js'
+
+const store = configureStore({
+   reducer : rootreducer
+ })
+ 
+ 
 
 createRoot(document.getElementById('root')).render(
-   <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App/>} />
-        <Route path='/login' element={<Login/>} />
-      </Routes>
-   </BrowserRouter>
+   <Provider store={store}>
+      <App />
+   </Provider>
 )

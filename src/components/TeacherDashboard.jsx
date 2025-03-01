@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+
 import {
   LineChart,
   Line,
@@ -130,6 +133,8 @@ const TeacherDashboard = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [draggedItem, setDraggedItem] = useState(null);
 
+  const navigate = useNavigate();
+
   const handleSort = (field) => {
     if (sortBy === field) {
       setSortDirection(sortDirection === "asc" ? "desc" : "asc");
@@ -177,6 +182,12 @@ const TeacherDashboard = () => {
   const handlePlaylistClick = (playlist) => {
     setCurrentPlaylist(playlist);
   };
+
+  function signouthandler()
+  {
+    localStorage.removeItem('token');
+    navigate('/')
+  }
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -243,7 +254,7 @@ const TeacherDashboard = () => {
               className="flex items-center text-gray-300 hover:text-white transition"
             >
               <LogOut className="mr-3" size={18} />
-              <span>Sign Out</span>
+              <span onClick={signouthandler}>Sign Out</span>
             </a>
           </div>
         </div>
